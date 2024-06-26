@@ -1,0 +1,233 @@
+@import '../variables/variables.scss';
+
+.app-feature-wrapper {
+    overflow: hidden;
+    .slick-slider {
+        .slick-next:before,
+        .slick-prev:before {
+            display: none;
+        }
+        .slick-list {
+            padding: 20px 0 0 !important;
+            margin-top: 50px;
+            .slick-track {
+                display: flex;
+                align-items: center;
+                .slick-slide {
+                    border-radius: 6px;
+                    .items {
+                        display: grid !important;
+                        justify-content: space-between;
+                        grid-template-columns: repeat(2, 2fr);
+                        box-shadow: 20px -19px 20px 0px #ddddddb3 inset;
+                        overflow: hidden;
+                        height: 450px;
+                        .text {
+                            width: 100%;
+                            display: flex;
+                            align-items: start;
+                            justify-content: center;
+                            flex-direction: column;
+                            color: $main_color;
+                            text-transform: capitalize;
+                            h2 {
+                                font-weight: 600;
+                                font-size: 30px;
+                                margin-bottom: 10px;
+                            }
+                            h5 {
+                                font-size: $font_14;
+                                margin: 15px 0 ;
+                                font-weight: 600;
+                            }
+                            p {
+                                font-size: 14px;
+                                max-width: 85%;
+                                line-height: 1.7;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 3;
+                                overflow: hidden;
+                                text-align: justify;
+                            }
+
+                            .see-all {
+                                margin-top: 20px;
+                                a {
+                                    color: $main_color;
+                                    font-size: $font_14;
+                                    text-transform: capitalize;
+                                    transition: $transition;
+                                    text-decoration: underline !important;
+                                    &:hover {
+                                        color: $secondary_color;
+                                    }
+                                }
+                            }
+                            .download-app {
+                                display: flex;
+                                margin-top: 30px;
+                                gap: 15px;
+                            }
+                        }
+                        .app-images {
+                            width: 85%;
+                            height: 450px;
+                            padding-left: 115px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            bottom: 30px;
+            padding-left: 110px !important;
+            li {
+                margin: 0 !important;
+                button {
+                    &::before {
+                        color: $main_color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .app-feature-wrapper {
+        .portal-title {
+            p {
+                max-width: 90%;
+                line-height: 1.7;
+            }
+        }
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        .items {
+                            grid-template-columns: repeat(1, 1fr);
+                            padding: 45px;
+                            grid-gap: 30px;
+                            height: auto;
+                            .text {
+                                max-width: 100%;
+                                p {
+                                    max-width: 100%;
+                                }
+                            }
+                            .app-images {
+                                width: 100%;
+                                padding-left: 0;
+                                height: auto;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .slick-dots {
+                display: none !important;
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .app-feature-wrapper {
+        .portal-title {
+            p {
+                max-width: 90%;
+                line-height: 1.7;
+            }
+        }
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        .items {
+                            grid-gap: 30px;
+                            height: auto;
+                            padding: 45px 45px 0;
+                            .text {
+                                max-width: 100%;
+                                padding-bottom: 45px;
+                                p {
+                                    max-width: 100%;
+                                }
+                            }
+                            .app-images {
+                                width: 100%;
+                                padding-left: 0;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .slick-dots {
+                display: none !important;
+            }
+        }
+    }
+ }
+
+
+
+ // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .app-feature-wrapper {
+        .portal-title {
+            p {
+                max-width: 90%;
+                line-height: 1.7;
+            }
+        }
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        .items {
+                            grid-gap: 30px;
+                            height: auto;
+                            padding: 45px 45px 0;
+                            .text {
+                                max-width: 100%;
+                                padding-bottom: 45px;
+                                p {
+                                    max-width: 100%;
+                                }
+                            }
+                            .app-images {
+                                width: 100%;
+                                padding-left: 0;
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .slick-dots {
+                display: none !important;
+            }
+        }
+    }
+ }

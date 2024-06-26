@@ -1,0 +1,239 @@
+@import '../variables/variables.scss';
+
+.header {
+    height: 100vh;
+    background-color: #ddd;
+    overflow: hidden;
+    .slick-slider {
+        .slick-next:before,
+        .slick-prev:before {
+            display: none;
+        }
+        height: 100%;
+        .slick-list {
+            height: 100%;
+            .slick-track {
+                height: 100%;
+                .slick-slide {
+                    height: 100%;
+                }
+                .main {
+                    height: 100vh;
+                    background-color: $main_color;
+                    width: 100%;
+                    position: relative;
+                    .image {
+                        width: 100%;
+                        height: 100vh;
+                        position: relative;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        .single_video {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        .overlay {
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(7, 7, 7, 0.582);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+
+                    }
+                    .text {
+                        position: absolute;
+                        top: calc(50% + 67px);
+                        left: 50%;
+                        color: white;
+                        width: 100%;
+                        margin: 0 auto;
+                        z-index: 99;
+                        transform: translate(-50%, -50%);
+                        text-align: start;
+                        text-transform: capitalize;
+                       .title{
+                            font-size: $font_45;
+                            line-height: 1.4;
+                            font-weight: 600;
+                            color: white;
+                            max-width: 50%;
+                        }
+                        .description {
+                            font-size: $font_16;
+                            margin: 20px 0 ;
+                            color: $secondary_color;
+                            line-height: 1.7;
+                            max-width: 45%;
+                        }
+                        .load-app {
+                            font-size: $font_12;
+                            margin-top: 50px;
+                            margin-bottom: 15px;
+                        }
+                        img {
+                            display: inline-block;
+                            width: 85px;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            bottom: 20px !important;
+            li {
+                button {
+                    &::before {
+                        color: $secondary_color;
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-loading {
+    background-color: $background_color2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .header {
+        height: auto;
+        .slick-slider {
+            .slick-list {
+                .slick-track 
+                .main {
+                    .text {
+                        text-align: center;
+                        top: calc(70%);
+                        .title {
+                            max-width: 100%;
+                            font-size: $font_32;
+                        }
+                        .description {
+                            max-width: 100%;
+                        }
+                    }
+                    .image {
+                        img {
+                            height: 50%;
+                            object-fit: cover;
+                        }
+                        .single_video {
+                            height: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and  up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .header {
+        .slick-slider {
+            .slick-list {
+                .slick-track 
+                .main {
+                    .text {
+                        text-align: center;
+                        top: calc(70%);
+                        .title {
+                            max-width: 100%;
+                            font-size: $font_32;
+                        }
+                        .description {
+                            max-width: 100%;
+                        }
+                    }
+                    .image {
+                        img {
+                            height: 50%;
+                            object-fit: cover;
+                        }
+                        .single_video {
+                            height: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .header {
+        .slick-slider {
+            .slick-list {
+                .slick-track 
+                .main {
+                    .text {
+                        .title {
+                            max-width: 80%;
+                            font-size: $font_45;
+                        }
+                        .description {
+                            max-width: 70%;
+                        }
+                    }
+                    .image {
+                        img {
+                            height: 100%;
+                        }
+                        .single_video {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .header {
+        .slick-slider {
+            .slick-list {
+                .slick-track 
+                .main {
+                    .text {
+                        .title {
+                            max-width: 60%;
+                            font-size: $font_45;
+                        }
+                        .description {
+                            max-width: 60%;
+                        }
+                    }
+                    .image {
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+ }

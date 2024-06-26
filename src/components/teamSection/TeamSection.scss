@@ -1,0 +1,49 @@
+@import "../variables/variables.scss";
+
+.great-team-section {
+    padding: $padding_80;
+    .great-team-title-top {
+        text-align: center;
+        text-transform: capitalize;
+        color: $main_color;
+        h2 {
+            font-size: $font_32;
+            font-weight: 600;
+        }
+        p {
+            max-width: 50%;
+            margin: 10px auto;
+            font-size: $font_14;
+            line-height: 1.7;
+        }
+    }
+    .our-team {
+        padding-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        color: $main_color;
+        a {
+            img {
+                width: 210px;
+                height: 210px;
+            }
+            h5 {
+                font-size: $font_18;
+                font-weight: 600;
+                margin: 15px 0 5px;
+                text-transform: capitalize;
+                color: black;
+            }
+            p {
+                font-size: $font_14;
+                text-transform: capitalize;
+                color: black;
+            }
+        }
+    }
+}

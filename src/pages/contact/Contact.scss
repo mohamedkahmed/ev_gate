@@ -1,0 +1,232 @@
+@import "../../components/variables/variables.scss";
+
+
+
+.contact-wrapper {
+    padding-top: calc(80px + 134px);
+    padding-bottom: 80px;
+    background-color: $background_color2;
+    overflow: hidden;
+    .contact-title-text {
+        color: $main_color;
+        text-transform: capitalize;
+        max-width: 60%;
+        h2 {
+            font-size: $font_32;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: $font_14;
+            line-height: 1.7;
+            max-width: 90%;
+        }
+    }
+    .contact-us-links {
+        padding: 50px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+            a {
+                display: flex;
+                align-items: center;
+                .link-items-ch {
+                    gap: 10px;
+                }
+                 p{
+                    margin: 0;
+                 }
+                 svg {
+                    font-size: 20px;
+                 }
+            }
+            .link-items-ch {
+                color: white;
+                font-size: $font_14;
+                background-color: $main_color;
+                gap: 15px;
+                width: 240px;
+                height: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: $raduis_8;
+                transition: $transition;
+                &:hover {
+                    background-color: $secondary_color;
+                    color: $main_color;
+                    a {
+                        color: $main_color;
+                    }
+                }
+                a {
+                    color: white;
+                }
+            }
+    }
+
+    /* form section */
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 0 !important;
+        .main-parent {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            div {
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+                text-transform: capitalize;
+                color: $main_color;
+                width: 100%;
+                label {
+                    font-weight: 600;
+                    font-size: $font_14;
+                    margin-left: 10px;
+                }
+                input {
+                    width: 100%;
+                    padding: 12px 15px; 
+                    border: none;
+                    border-radius: $raduis_20;
+                    background-color: #dddddd6c;
+                    font-size: $font_14;
+                    outline: none;
+                }
+            }
+            select {
+                width: 100%;
+                padding: 12px 15px; 
+                border: none;
+                border-radius: $raduis_20;
+                background-color: #dddddd6c;
+                font-size: $font_14;
+                outline: none;
+            }
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-transform: capitalize;
+            textarea {
+                width: 100%;
+                padding: 12px 15px; 
+                border: none;
+                border-radius: $raduis_20;
+                background-color: #dddddd6c;
+                font-size: $font_14;
+                outline: none;
+                height: 120px !important;
+            }
+        }
+        .send-dm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: $font_14;
+            color: $main_color;
+
+            .check-input {
+                margin-right: 8px;
+            }
+            .submit-input {
+                padding: 10px 20px;
+                border-radius: $raduis_20;
+                outline: none;
+                background-color: $secondary_color;
+                color: $main_color;
+                border: none;
+                text-transform: capitalize;
+                font-size: $font_12;
+                font-weight: 600;
+                transition: $transition;
+                &:hover {
+                    background-color: $main_color;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .contact-wrapper {
+        .contact-title-text {
+            max-width: 100%;
+        }
+        .contact-us-links {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-section {
+            .main-parent {
+                flex-direction: column;
+            }
+            .send-dm {
+                flex-direction: column;
+                gap: 15px;
+                align-items: start;
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .contact-wrapper {
+        .contact-title-text {
+            max-width: 100%;
+        }
+        .contact-us-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .form-section {
+            .main-parent {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .send-dm {
+                flex-direction: column;
+                gap: 15px;
+                align-items: start;
+            }
+        }
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .contact-wrapper {
+        .contact-title-text {
+            max-width: 100%;
+        }
+        .contact-us-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+ }

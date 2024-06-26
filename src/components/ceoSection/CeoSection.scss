@@ -1,0 +1,105 @@
+@import '../variables/variables.scss';
+
+    /* ceo message section */
+    .ceo-message-wrapper {
+        padding: $padding_80;
+        .ceo-parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            align-items: center;
+            justify-content: end;
+            position: relative;
+            .ceo-img {
+                img {
+                    width: 421px;
+                    object-fit: cover;
+                }
+            }
+            .ceo-content {
+                text-transform: capitalize;
+                color: $main_color;
+                h2 {
+                    font-weight: 600;
+                    font-size: $font_32;
+                }
+                h5 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 50px;
+                }
+                p {
+                    font-size: $font_14;
+                    line-height: 1.8;
+                    font-weight: 600;
+                    margin: 25px 0;
+                }
+                .name {
+                    padding-top: 20px;
+                    font-size: $font_14;
+                    text-transform: capitalize;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            .line {
+                width: 120px;
+                height: 2px;
+                background-color: $secondary_color;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    // Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .ceo-message-wrapper {
+        .ceo-parent {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: start;
+            gap: 30px;
+            .ceo-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .ceo-message-wrapper {
+        .ceo-parent {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: start;
+            gap: 30px;
+            .ceo-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .ceo-message-wrapper {
+        .ceo-parent {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: start;
+            gap: 30px;
+            .ceo-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+ }
+

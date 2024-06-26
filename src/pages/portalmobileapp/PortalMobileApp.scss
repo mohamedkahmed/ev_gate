@@ -1,0 +1,215 @@
+@import '../../components/variables/variables.scss';
+
+.single-portal-mobile-app {
+    padding: $padding_80;
+    background-color: $background_color2;
+    padding-bottom: 0;
+    overflow: hidden;
+    .title-top {
+        text-align: center;
+        text-transform: capitalize;
+        color: $main_color;
+        margin-bottom: 50px;
+        h2 {
+            font-size: $font_32;
+            font-weight: 600;
+            margin: 0;
+        }
+        p {
+            max-width: 80%;
+            margin: 20px auto;
+            font-size: $font_14;
+            line-height: 1.7;
+        }
+        .load-app-images {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+    }
+    .portal-features {
+        .feat {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            grid-template-columns: repeat(2, 2fr);
+            grid-gap: 50px;
+            padding: 80px 50px 0;
+            box-shadow: 20px -19px 20px 0px #ddddddb3 inset;
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            .image-portal {
+                width: 45%;
+                img {
+                    width: 100%;
+                    height: 100% !important;
+                    object-fit: cover;
+                }
+            }
+            .text-portal {
+                color: $main_color;
+                text-transform: capitalize;
+                width: 55%;
+                h2 {
+                    font-weight: 600;
+                }
+                p {
+                    font-size: $font_14;
+                    max-width: 80%;
+                    margin-top: 10px ;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 5;
+                    overflow: hidden;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .single-portal-mobile-app {
+        .portal-features {
+            .feat {
+                flex-direction: column;
+                text-align: center;
+                padding-left: 0 !important;
+                padding: 50px 0;
+                &:nth-child(even) {
+                    flex-direction: column;
+                  }
+                p {
+                    margin: 0 auto;
+                }
+                .text-portal {
+                width: 100%;
+                order: 2 !important;
+                text-align: center;
+                    p {
+                        max-width: 90%;
+                        text-align: center;
+                    }
+                }
+                .image-portal {
+                    width: 100%;
+                    order: 1 !important;
+                    img {
+                        object-fit: inherit;
+                        width: 100%;
+                        height: 100% !important;
+                    }
+                }
+            }
+            .add-padd {
+                padding: 0 !important;
+                p {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .single-portal-mobile-app {
+        .portal-features {
+            .feat {
+                flex-direction: column;
+                text-align: center;
+                padding-left: 0 !important;
+                padding: 50px 0;
+                &:nth-child(even) {
+                    flex-direction: column;
+                  }
+                p {
+                    margin: 0 auto;
+                }
+                .text-portal {
+                width: 100%;
+                order: 2 !important;
+                text-align: center;
+                    p {
+                        max-width: 90%;
+                        text-align: center;
+                    }
+                }
+                .image-portal {
+                    width: 100%;
+                    order: 1 !important;
+                    img {
+                        object-fit: inherit;
+                        width: 100%;
+                        height: 100% !important;
+                    }
+                }
+            }
+            .add-padd {
+                padding: 0 !important;
+                p {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+ }
+
+
+ // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .single-portal-mobile-app {
+        .portal-features {
+            .feat {
+                flex-direction: column;
+                text-align: center;
+                padding-left: 0 !important;
+                padding: 50px 0;
+                &:nth-child(even) {
+                    flex-direction: column;
+                  }
+                p {
+                    margin: 0 auto;
+                }
+                .text-portal {
+                width: 100%;
+                order: 2 !important;
+                text-align: center;
+                    p {
+                        max-width: 90%;
+                        text-align: center;
+                    }
+                }
+                .image-portal {
+                    width: 100%;
+                    order: 1 !important;
+                    img {
+                        object-fit: inherit;
+                        width: 100%;
+                        height: 100% !important;
+                    }
+                }
+            }
+            .add-padd {
+                padding: 0 !important;
+                p {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+ }

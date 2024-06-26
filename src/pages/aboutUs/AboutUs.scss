@@ -1,0 +1,428 @@
+@import '../../components/variables/variables.scss';
+
+.single-about-us {
+    background-color: $background_color2;
+    padding: $padding_80;
+    overflow: hidden;
+    .title-top {
+        text-align: center;
+        text-transform: capitalize;
+        color: $main_color;
+        h2 {
+            font-size: $font_32;
+            font-weight: 600;
+        }
+        p {
+            max-width: 50%;
+            margin: 10px auto;
+            font-size: $font_14;
+            line-height: 1.7;
+        }
+    }
+    .about-content {
+        padding: $padding_80;
+        .main-about-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            img {
+                max-width: 470px;
+                height: 665px;
+                border-radius: 15px;
+            }
+            p {
+                font-size: $font_14;
+                color: $main_color;
+                text-transform: capitalize;
+                max-width: 90%;
+                line-height: 1.7;
+                margin: 10px 0;
+            }
+        }
+    }
+    .h-p-y {
+        padding: $padding_80;
+        .ch-section {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .feat {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: $secondary_color;
+                border-radius: 50%;
+                width: 180px;
+                height: 180px;
+                padding: 25px;
+                p {
+                    margin: 0;
+                    font-size: $font_12;
+                    color: $main_color;
+                    font-weight: 600;
+                }
+                h5 {
+                    margin: 10px 0;
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: $main_color;
+                }
+            }
+        }
+    }
+
+
+    /* pic section */
+    .pic {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+
+    /* our mission */
+
+
+    /* meet team section */
+    .meet-team-section {
+        padding: $padding_80;
+        .meet-team-title-top {
+            text-align: center;
+            text-transform: capitalize;
+            color: $main_color;
+            h2 {
+                font-size: $font_32;
+                font-weight: 600;
+            }
+            p {
+                max-width: 50%;
+                margin: 10px auto;
+                font-size: $font_14;
+                line-height: 1.7;
+            }
+        }
+        .meet-team-image {
+            margin: 80px 0 0;
+            width: 100%;
+            height: 465px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+        /* great team section */
+
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .single-about-us {
+        .title-top {
+            p {
+                max-width: 90%;
+            }
+        }
+        .about-content {
+            padding-top: 30px;
+            .main-about-content {
+                flex-direction: column;
+            }
+            .main-about-content {
+                text-align: center;
+                p {
+                    max-width: 90%;
+                    margin: 20px auto;
+                }
+            }
+        }
+        .h-p-y {
+            .ch-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        .vision-wrapper {
+            .vision-content {
+                p {
+                    max-width: 95%;
+                    line-height: 1.7;
+                }
+            }
+        }
+
+        .our-mission {
+            .mission-title-top {
+                p {
+                    max-width: 100%;
+                }
+            }
+            .mission-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                .feat {
+                    width: auto;
+                    .images {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .meet-team-section {
+            .meet-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+            .meet-team-image {
+                height: 280px;
+            }
+        }
+
+        .great-team-section {
+            padding: 0;
+            .great-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+                .our-team {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+        }
+        
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .single-about-us {
+        .title-top {
+            p {
+                max-width: 90%;
+            }
+        }
+        .about-content {
+            padding-top: 30px;
+            .main-about-content {
+                flex-direction: column;
+            }
+            .main-about-content {
+                text-align: center;
+                p {
+                    max-width: 100%;
+                    margin: 20px auto;
+                }
+            }
+        }
+        .h-p-y {
+            .ch-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        .vision-wrapper {
+            .vision-content {
+                p {
+                    max-width: 95%;
+                    line-height: 1.7;
+                }
+            }
+        }
+
+        .our-mission {
+            .mission-title-top {
+                p {
+                    max-width: 100%;
+                }
+            }
+            .mission-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                .feat {
+                    width: auto;
+                    .images {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .meet-team-section {
+            .meet-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+            .meet-team-image {
+                height: 280px;
+            }
+            .meet-text {
+                p {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .great-team-section {
+            padding: 0;
+            .great-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+                .our-team {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+        }
+        
+    } 
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .single-about-us {
+        .title-top {
+            p {
+                max-width: 90%;
+            }
+        }
+        .about-content {
+            padding-top: 30px;
+            .main-about-content {
+                flex-direction: column;
+            }
+            .main-about-content {
+                text-align: center;
+                p {
+                    max-width: 100%;
+                    margin: 20px auto;
+                }
+            }
+        }
+        .h-p-y {
+            .ch-section {
+                flex-direction: column;
+                gap: 30px;
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+
+        .vision-wrapper {
+            .vision-content {
+                p {
+                    max-width: 95%;
+                    line-height: 1.7;
+                }
+            }
+        }
+
+        .our-mission {
+            .mission-title-top {
+                p {
+                    max-width: 100%;
+                }
+            }
+            .mission-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                .feat {
+                    width: auto;
+                    .images {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .meet-team-section {
+            .meet-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+            .meet-team-image {
+                height: 350px;
+            }
+            .meet-text {
+                p {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .great-team-section {
+            padding: 0;
+            .great-team-title-top {
+                p {
+                    max-width: 95%;
+                }
+            }
+                .our-team {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+        }
+        
+    } 
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .single-about-us {
+        .our-mission {
+            .mission-title-top {
+                p {
+                    max-width: 100%;
+                }
+            }
+            .mission-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+            
+                .feat {
+                    width: auto;
+                    .images {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+ }

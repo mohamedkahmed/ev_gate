@@ -1,0 +1,39 @@
+@import "../variables/variables.scss";
+
+.vision-wrapper {
+    padding: $padding_80;
+    background-color: $main_color;
+    .vision-content {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+        flex-direction: column;
+        text-align: center;
+        h2 {
+            font-weight: 600;
+            font-size: $font_32;
+        }
+        p {
+            font-size: $font_14;
+            max-width: 80%;
+            color: rgb(214, 214, 214);
+        }
+        .one {
+            font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+            img {
+                width: 30px;
+            }
+        }
+    }
+}

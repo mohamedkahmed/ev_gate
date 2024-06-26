@@ -1,0 +1,170 @@
+@import '../../components/variables/variables.scss';
+
+.single-solutions {
+    .title-top {
+        text-align: center;
+        text-transform: capitalize;
+        color: $main_color;
+        padding: $padding_80;
+        h2 {
+            font-size: $font_32;
+            font-weight: 600;
+        }
+        p {
+            max-width: 60%;
+            margin: 10px auto;
+            font-size: $font_14;
+            line-height: 1.7;
+        }
+    }
+    .main-images {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .img-txt {
+            width: 100%;
+            position: relative;
+            height: 495px;
+            .text {
+                position: relative;
+                z-index: 99;
+                text-transform: capitalize;
+                width: 50%;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+                height: 495px;
+                h2 {
+                    color: $secondary_color;
+                    font-size: $font_32;
+                }
+                p {
+                    color: white;
+                    font-size: $font_14;
+                    line-height: 1.7;
+                    margin: 10px 0;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 6;
+                    overflow: hidden;
+                    text-align: justify;
+                }
+            }
+            .right {
+                left: 50%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .single-solutions {
+        .title-top {
+            p {
+                max-width: 85%;
+            }
+        }
+        .main-images {
+            .img-txt {
+                height: 300px;
+                img {
+                    object-fit: cover;
+                }
+                .text {
+                    padding: 0 20px;
+                    width: 100%;
+                    height: 300px;
+                    h2 {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-size: $font_12;
+                    }
+                }
+                .right {
+                    left: 0;
+                }
+            }
+        }
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .single-solutions {
+        .main-images {
+            .img-txt {
+                height: 300px;
+                img {
+                    object-fit: cover;
+                }
+                .text {
+                    width: 100%;
+                    height: 300px;
+                    align-items: center;
+                    text-align: center;
+                    h2 {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: $font_12;
+                        max-width: 80%;
+                    }
+                }
+                .right {
+                    left: 0;
+                }
+            }
+        }
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .single-solutions {
+        .main-images {
+            .img-txt {
+                height: 400px;
+                img {
+                    object-fit: cover;
+                }
+                .text {
+                    width: 100%;
+                    height: 400px;
+                    h2 {
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: $font_12;
+                        max-width: 50%;
+                    }
+                }
+
+            }
+        }
+    }
+ }
+
+/* // Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    
+ } */
