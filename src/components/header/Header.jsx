@@ -3,10 +3,12 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { useFetchHomeSlider } from "../fetchData/FetchData";
 import { Loading } from "../../components";
+import {useFetchDownloadImagesLink} from "../fetchData/FetchData";
+
 import "./Header.scss";
 const Header = () => {
   const { loading, homeslider } = useFetchHomeSlider();
-
+  const { downloadImagesLinker} = useFetchDownloadImagesLink();
   if (loading) {
     return <Loading />;
   }
@@ -37,6 +39,8 @@ const Header = () => {
               googleImage,
               appImage,
               url,
+              appImageLink,
+              googleImageLink
             } = items;
             return (
               <div className="main" key={id}>
@@ -62,7 +66,7 @@ const Header = () => {
                     {googleImage ? (
                       <Link
                         target="_blank"
-                        to="https://install.appcenter.ms/users/saraevgate/apps/ev-gate/distribution_groups/testers"
+                        to={downloadImagesLinker[0]?.googleImageLink}
                       >
                         <img
                           className="google-play-img"
@@ -74,7 +78,7 @@ const Header = () => {
                     {appImage ? (
                       <Link
                         target="_blank"
-                        to="https://testflight.apple.com/join/IjVWg9Ju"
+                        to={downloadImagesLinker[0]?.appImageLink}
                       >
                         <img
                           className="app-store-img"

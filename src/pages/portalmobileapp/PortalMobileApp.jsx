@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 import {
   useFetchAppManage,
   useFetchCoverAppPage,
+  useFetchDownloadImagesLink
 } from "../../components/fetchData/FetchData";
 import { Loading } from "../../components";
 import "./PortalMobileApp.scss";
 const PortalMobileApp = () => {
   const { loading, appManage } = useFetchAppManage();
+  const { downloadImagesLinker} = useFetchDownloadImagesLink();
   const { coverAppManage } = useFetchCoverAppPage();
   if (loading) {
     return <Loading />;
   }
-  console.log(coverAppManage);
   return (
     <>
       <BreadCrumb img={coverAppManage[0]?.aImage} />
@@ -31,13 +32,13 @@ const PortalMobileApp = () => {
             <div data-aos="zoom-in-up" className="load-app-images">
               <Link
                 target="_blank"
-                to="https://install.appcenter.ms/users/saraevgate/apps/ev-gate/distribution_groups/testers"
+                to={downloadImagesLinker[0]?.googleImageLink}
               >
                 <img src="/images/playDark.svg" alt="google play" />
               </Link>
               <Link
                 target="_blank"
-                to="https://testflight.apple.com/join/IjVWg9Ju"
+                to={downloadImagesLinker[0]?.appImageLink}
               >
                 <img src="/images/appDark.svg" alt="app sotre" />
               </Link>

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram  } from "react-icons/fa";
+import {useFetchDownloadImagesLink} from "../fetchData/FetchData";
+
 import { IoIosSend } from "react-icons/io";
 import './Footer.scss';
 const Footer = () => {
+  const { downloadImagesLinker} = useFetchDownloadImagesLink();
+
   return (
     <div className='footer'>
         <div className="upper-footer">
@@ -26,8 +30,8 @@ const Footer = () => {
                 <img src="/images/logo.svg" alt="logo" />
               </div>
               <div className="download-app">
-                <Link target="_blank" to="https://install.appcenter.ms/users/saraevgate/apps/ev-gate/distribution_groups/testers"> <img src="/images/play1.svg" alt="download app image" /> </Link>
-                <Link target="_blank" to="https://testflight.apple.com/join/IjVWg9Ju"> <img src="/images/store1.svg" alt="download app image" /> </Link>
+                <Link target="_blank" to={downloadImagesLinker[0]?.googleImageLink}> <img src="/images/play1.svg" alt="download app image" /> </Link>
+                <Link target="_blank" to={downloadImagesLinker[0]?.appImageLink}> <img src="/images/store1.svg" alt="download app image" /> </Link>
               </div>
             </div>
             <div className="link-footer">
@@ -60,12 +64,37 @@ const Footer = () => {
               </ul>
             </div>
             <div className="link-footer">
+                <h5>Our Companies</h5>
+                <ul>
+                  <li>
+                    <Link to="/ourCompanies">Sara Electrical Supplies</Link>
+                  </li>
+                  <li>
+                    <Link to="/ourCompanies">Sara Digital & Solution</Link>
+                  </li>
+                  <li>
+                    <Link to="/ourCompanies">Sara Engineering & Energy</Link>
+                  </li>
+                </ul>
+              </div>
+            <div className="link-footer">
               <h5>Services</h5>
               <ul>
               <li><a href="/portalmanagementsystem">Portal Management System</a></li>
                 <li><a href="/portalmobileApp">Mobile Application</a></li>
               </ul>
             </div>
+            <div className="link-footer">
+                <h5>News</h5>
+                <ul>
+                  <li>
+                    <Link to="/news">all news</Link>
+                  </li>
+                  <li>
+                  <Link to="/news">lates news</Link>
+                  </li>
+                </ul>
+              </div>
             <div className="link-footer">
               <h5>Contact Us</h5>
               <ul>

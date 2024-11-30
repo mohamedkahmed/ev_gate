@@ -2,9 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import {useFetchAppManage} from "../fetchData/FetchData";
+import {useFetchDownloadImagesLink} from "../fetchData/FetchData";
 import './EvGateAppSlider.scss'
-
 const EvGateAppSlider = () => {
+  const { downloadImagesLinker} = useFetchDownloadImagesLink();
   const {loading, appManage} = useFetchAppManage();
   if (loading) {
     return (
@@ -21,7 +22,7 @@ const EvGateAppSlider = () => {
         dots: true,
         slidesToShow: 1,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         cssEase: "linear",
 
@@ -43,8 +44,8 @@ const EvGateAppSlider = () => {
                   <Link to="/portalmobileApp">See all</Link>
                 </div>
                     <div className="download-app">
-                    <Link target="_blank" to="https://install.appcenter.ms/users/saraevgate/apps/ev-gate/distribution_groups/testers"> <img src="/images/googlePlay.png" alt="download google play app " /> </Link>
-                <Link target="_blank" to="https://testflight.apple.com/join/IjVWg9Ju"> <img src="/images/appStore.png" alt="download app store" /> </Link>
+                    <Link target="_blank" to={downloadImagesLinker[0]?.googleImageLink}> <img src="/images/googlePlay.svg" alt="download google play app " /> </Link>
+                <Link target="_blank" to={downloadImagesLinker[0]?.appImageLink}> <img src="/images/appStore.svg" alt="download app store" /> </Link>
               </div>
                     </div>
                   </div>

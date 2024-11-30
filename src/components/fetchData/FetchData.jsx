@@ -24,12 +24,12 @@ export const useFetchHomeSlider = () => {
         try {
             const response = await homeSlideContent.getEntries({ content_type: "homeSlider"});
             const homeSlider = response.items.map((item) => {
-                const {title, desc, img, sliderPlay, sliderApp, loadApp, url} = item.fields
+                const {title, appImageLink, googleImageLink, desc, img, sliderPlay, sliderApp, loadApp, url} = item.fields
                 const id = item.sys.id
                 const image = img?.fields?.file?.url
                 const googleImage = sliderPlay?.fields?.file?.url
                 const appImage = sliderApp?.fields?.file?.url
-                return {title, id, desc, image, googleImage, appImage, loadApp, url}
+                return {title, id, desc, image, googleImage, appImage, loadApp, url, appImageLink, googleImageLink}
             })
             setHomeSlider(homeSlider)
             setLoading(false)
@@ -212,10 +212,10 @@ export const useFetchAppManage = () => {
         try {
             const response = await appManageSyetem.getEntries({ content_type: "appManageSystem"});
             const appManageSystem = response.items.map((item) => {
-                const {mainTitle, title, desc, img} = item.fields
+                const {mainTitle, title, desc, img, appImageLink, googleImageLink} = item.fields
                 const id = item.sys.id
                 const image = checkURLProtocal(img?.fields?.file?.url)
-                return {mainTitle, title, id, desc, image}
+                return {mainTitle, title, id, desc, image, appImageLink, googleImageLink}
             })
             setAppManage(appManageSystem)
             setLoading(false)
@@ -286,7 +286,7 @@ const ourCompaniesPage = createClient({
       try {
         const response = await ourCompaniesPage.getEntries({ content_type: "ourCompanies" });
         const ourCompanies = response.items.map((item) => {
-          const { img, logo, para1, para2, brandImg, arrowColor, idTitle, sideImg } = item.fields;
+          const { img, logo, para1, para2, brandImg, arrowColor, idTitle, sideImg, url } = item.fields;
           const id = item.sys.id;
           const image = checkURLProtocal(img?.fields?.file?.url);
           const logoImg = checkURLProtocal(logo?.fields?.file?.url);
@@ -294,7 +294,7 @@ const ourCompaniesPage = createClient({
           const brandImage = brandImg.map((ele) => {
             return checkURLProtocal(ele.fields?.file?.url);
           });
-          return { id, image, para1, para2, brandImage, logoImg, arrowColor, idTitle, sideBarImg };
+          return { id, image, para1, para2, brandImage, logoImg, arrowColor, idTitle, sideBarImg, url };
         });
         setOurCompanies(ourCompanies);
         setLoading(false);
@@ -327,15 +327,16 @@ const ourNewsPage = createClient({
       try {
         const response = await ourNewsPage.getEntries({ content_type: "news" });
         const news = response.items.map((item) => {
-          const { img, para1, para2, title, subImages, subtitle, date, url
+          const { img, para1, para2, title, subImages, subtitle, date, url, youWantToAddVideo
           } = item.fields;
           const id = item.sys.id;
           /* const date = item.sys.createdAt; */
           const image = checkURLProtocal(img?.fields?.file?.url);
+          const urlVid = checkURLProtocal(url?.fields?.file?.url);
           const subImg = subImages.map((ele) => {
             return checkURLProtocal(ele.fields?.file?.url);
           });
-          return { id, image, para1, para2, title, subImg, subtitle, date, url
+          return { id, image, para1, para2, title, subImg, subtitle, date, urlVid, youWantToAddVideo
           };
         });
         setOurNews(news);
@@ -511,4 +512,40 @@ export const useFetchContactUs = () => {
         getData()
     }, [])
     return {loading, contactLinks}
+}
+
+
+/* download images link */
+
+
+const downloadImagesLinks = createClient({
+    space: "wjc8e5m7rth8",
+    environment: "master",
+    accessToken:"F1tbBDdROF-tL3R-SLWzooOHIIapxcGIHHDkDEpyqL0"
+})
+
+export const useFetchDownloadImagesLink = () => {
+    const [loading, setLoading] = useState(true)
+    const [downloadImagesLinker, setDownloadImagesLinker] = useState([])
+    const getData = async() => {
+        try {
+            const response = await downloadImagesLinks.getEntries({ content_type: "downloadImagesLink"});
+            const downloadImagesLink = response.items.map((item) => {
+                const {appImageLink,googleImageLink } = item.fields
+                const id = item.sys.id
+                return {id, appImageLink, googleImageLink}
+            })
+            setDownloadImagesLinker(downloadImagesLink)
+            setLoading(false)
+        } catch (error) {
+            console.log(error);
+            setLoading(false)
+        }
+    }
+    
+    
+    useEffect (() => {
+        getData()
+    }, [])
+    return {loading, downloadImagesLinker}
 }

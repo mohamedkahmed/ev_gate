@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import {useFetchCoverPortalPage} from "../../components/fetchData/FetchData";
 import {useFetchCoverAppPage} from "../../components/fetchData/FetchData";
+import {useFetchDownloadImagesLink} from "../fetchData/FetchData";
 import { GoArrowUpRight } from "react-icons/go";
 import "./BreadCrumb.scss";
 
@@ -11,6 +12,8 @@ const BreadCrumb = (props) => {
   const { title, desc, img } = props;
   const {loading, coverportalManage} = useFetchCoverPortalPage();
   const {coverAppManage} = useFetchCoverAppPage();
+  const { downloadImagesLinker} = useFetchDownloadImagesLink();
+
   if (loading) {
     return (
       <section className="about-feat-loading">
@@ -36,14 +39,14 @@ const BreadCrumb = (props) => {
                 {coverAppManage[0]?.appDescription}
                 </p>
                 <p className="load-app">{coverAppManage[0]?.loadApp}</p>
-                <Link target="_blank" to="https://install.appcenter.ms/users/saraevgate/apps/ev-gate/distribution_groups/testers">
+                <Link target="_blank" to={downloadImagesLinker[0]?.googleImageLink}>
                   <img
                     className="google-play-img"
                     src={coverAppManage[0]?.googleImage}
                     alt="google play"
                   />
                 </Link>
-                <Link target="_blank" to="https://testflight.apple.com/join/IjVWg9Ju">
+                <Link target="_blank" to={downloadImagesLinker[0]?.appImageLink}>
                   <img
                     className="app-store-img"
                     src={coverAppManage[0]?.appImage}

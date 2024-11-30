@@ -48,7 +48,7 @@ const HomeNews = () => {
         slidesToShow: 1,
         speed: 500,
         dots: false,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         cssEase: "linear",
         nextArrow: <SampleNextArrow />,
@@ -60,7 +60,7 @@ const HomeNews = () => {
 
       <Slider {...settings}>
         {ourNews.map((items) => {
-          const {id,image, para1, para2, title, date, url} = items;
+          const {id,image, para1, para2, title, date, urlVid,youWantToAddVideo} = items;
           return (
             <div className="home_news_content" key={id}>
             <div className="home_news_text">
@@ -83,9 +83,9 @@ const HomeNews = () => {
               </div>
             </div>
             <div className="home_news_image">
-            {url ? (
+            {youWantToAddVideo ? (
                       <video className="single_video" autoPlay muted loop>
-                        <source src={url} type="video/mp4" />
+                        <source src={urlVid} type="video/mp4" />
                       </video>
                     ) : (
                         <img src={image} alt={title} />

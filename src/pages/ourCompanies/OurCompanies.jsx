@@ -27,7 +27,7 @@ const OurCompanies = () => {
           <BreadCrumb title="Our Companies" desc="Explore the innovative companies that make up our group: Sara Engineering & Energy, Sara Electrical Supplies, Sara Digital, and EV Gate." img="/images/Home-15_1440x495-2 1.svg"/>
           <section className="our_Companies_wrapper">
             {ourCompanies.map((items) => {
-              const {id,image, para1,para2,brandImage, logoImg, arrowColor, idTitle, sideBarImg} = items;
+              const {id,image, para1,para2,brandImage, logoImg, arrowColor, idTitle, sideBarImg, url} = items;
               return (
                 <div id={idTitle}   className="our_Companies_content" key={id} ref={ref} >
                     <div className="content_text" data-aos="fade-right">
@@ -51,7 +51,7 @@ const OurCompanies = () => {
                             <div className="arrow" style={{color: `${arrowColor}`}}>
                                 <MdKeyboardArrowRight/>
                             </div>
-                            <Link to="#" className="go">
+                            <Link to={url} target="_blank" className="go">
                                 <p>Go To Website</p> 
                                 <MdKeyboardArrowRight style={{color: `${arrowColor}`}}/>
                             </Link>
