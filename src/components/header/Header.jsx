@@ -38,9 +38,8 @@ const Header = () => {
               loadApp,
               googleImage,
               appImage,
-              url,
-              appImageLink,
-              googleImageLink
+              url
+
             } = items;
             return (
               <div className="main" key={id}>

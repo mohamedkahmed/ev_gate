@@ -24,12 +24,12 @@ export const useFetchHomeSlider = () => {
         try {
             const response = await homeSlideContent.getEntries({ content_type: "homeSlider"});
             const homeSlider = response.items.map((item) => {
-                const {title, appImageLink, googleImageLink, desc, img, sliderPlay, sliderApp, loadApp, url} = item.fields
+                const {title, desc, img, sliderPlay, sliderApp, loadApp, url} = item.fields
                 const id = item.sys.id
                 const image = img?.fields?.file?.url
                 const googleImage = sliderPlay?.fields?.file?.url
                 const appImage = sliderApp?.fields?.file?.url
-                return {title, id, desc, image, googleImage, appImage, loadApp, url, appImageLink, googleImageLink}
+                return {title, id, desc, image, googleImage, appImage, loadApp, url}
             })
             setHomeSlider(homeSlider)
             setLoading(false)
